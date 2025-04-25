@@ -101,7 +101,6 @@ def asymmetric_decryption(encryption_system: AsymmetricEncryption, ciphertext_ba
     return plaintext_bob
 
 def asymmetric_decryption_list(encryption_system: AsymmetricEncryption, ciphertexts: List[dict]) -> List[str]:
-    """فك تشفير قائمة من الـ ciphertexts وإرجاع النصوص الأصلية."""
     plaintexts = []
     for item in ciphertexts:
         plaintext = asymmetric_decryption(encryption_system, item["ciphertext"], item["pad"])
