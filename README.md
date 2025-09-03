@@ -1,4 +1,4 @@
-#🛡️ Neural Network Asymmetric Encryption System
+# 🛡️ Neural Network Asymmetric Encryption System
 
 # 📜 Overview
 This project implements a neural network-based asymmetric encryption system inspired by adversarial learning principles. It features:
@@ -49,43 +49,25 @@ Alternatively, train the models using asymmetric_encryption.ipynb (see Training)
 #📡 Usage
 
 Run the FastAPI Server:
-bashuvicorn main:app --reload --port 8000
+bashuvicorn main:app --reload --port 8000.
 Access the server at http://127.0.0.1:8000.
+
 Check Server Health:
 bashcurl http://127.0.0.1:8000/health
 Expected response: {"status": "healthy"}
+
 Explore the API:
 Visit http://127.0.0.1:8000/docs for interactive Swagger UI documentation.
 
-#🔍 Example: Encrypt & Decrypt via cURL
-Encrypt a list of plaintexts:
-bashcurl -X POST "http://127.0.0.1:8000/encrypt" \
-  -H "Content-Type: application/json" \
-  -d '{"plaintext": ["Hello, World!", "Secret Message"]}'
-Response:
-json{
-  "results": [
-    {"ciphertext": "<base64_encoded>", "pad": 0},
-    {"ciphertext": "<base64_encoded>", "pad": 8}
-  ]
-}
-Decrypt the ciphertexts:
-bashcurl -X POST "http://127.0.0.1:8000/decrypt" \
-  -H "Content-Type: application/json" \
-  -d '{"ciphertexts": [{"ciphertext": "<base64_encoded>", "pad": 0}, ...]}'
-Response:
-json{
-  "plaintexts": ["Hello, World!", "Secret Message"]
-}
 
 # 🐍 Example: Python Client
 pythonimport requests
 
-# Encrypt
+Encrypt
 response = requests.post("http://127.0.0.1:8000/encrypt", json={"plaintext": ["Test message"]})
 print(response.json())
 
-# Decrypt
+Decrypt
 cipher_data = response.json()["results"]
 decrypt_response = requests.post("http://127.0.0.1:8000/decrypt", json={"ciphertexts": cipher_data})
 print(decrypt_response.json())
@@ -115,14 +97,23 @@ pythonencryption_system.plot_errors("eval")
 The training ensures Bob's decryption error is near 0, while Eve's error remains high (~0.5, equivalent to random guessing).
 
 # 📂 Project Structure
+
 text├── 📄 main.py                    # FastAPI server for encryption/decryption
+
 ├── 📓 asymmetric_encryption.ipynb # Jupyter notebook for model training
+
 ├── 💾 key_gen.keras              # Pre-trained KeyGen model
+
 ├── 💾 alice.keras                # Pre-trained Alice model
+
 ├── 💾 bob.keras                  # Pre-trained Bob model
+
 ├── 💾 eve.keras                  # Pre-trained Eve model (for evaluation)
+
 ├── 📋 requirements.txt           # Dependency list
+
 ├── 📝 README.md                  # This file
+
 └── 📜 LICENSE                    # MIT License
 
 # 🤝 Contributing
