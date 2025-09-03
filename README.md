@@ -56,7 +56,7 @@ Ensure Pre-trained Models:
 Place key_gen.keras, alice.keras, bob.keras, and eve.keras in the root directory.
 Alternatively, train the models using asymmetric_encryption.ipynb (see Training).
 
-#📡 Usage
+# 📡 Usage
 
 Run the FastAPI Server:
 bashuvicorn main:app --reload --port 8000.
