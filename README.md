@@ -17,20 +17,30 @@ The system is trained to ensure Bob's accurate decryption while thwarting Eve's 
 # ✨ Features
 
 🧠 Neural network models for key generation, encryption, decryption, and adversarial simulation.
+
 📦 Batch processing for encryption/decryption via API.
+
 🌍 CORS-enabled for seamless web integration.
+
 🔢 Base64-encoded ciphertexts for easy data transfer.
+
 ✅ Health check endpoint for server monitoring.
+
 📊 Visualization of training errors (Bob vs. Eve).
 
 
 # 🛠️ Requirements
 
 🐍 Python 3.10+
+
 🔬 TensorFlow 2.19+
+
 🧩 Keras 3.9+
+
 🚀 FastAPI
+
 🖥️ Uvicorn (for running the API server)
+
 📚 Additional dependencies: NumPy, Matplotlib, TQDM, Pydantic, etc.
 
 See requirements.txt for the complete list.
